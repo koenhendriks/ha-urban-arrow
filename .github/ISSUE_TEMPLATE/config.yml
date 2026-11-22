@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: API library issues
+    url: https://github.com/koenhendriks/urban-arrow-api/issues
+    about: Problems with the underlying urban-arrow-api Python library

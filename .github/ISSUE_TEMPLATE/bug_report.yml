@@ -1,0 +1,43 @@
+name: Bug report
+description: Something in the Urban Arrow integration does not work
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Integration version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: ha_version
+    attributes:
+      label: Home Assistant version
+      placeholder: "2026.11.0"
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Bike model
+      placeholder: "Family Active Line Plus"
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: >-
+        Download diagnostics from the integration page (three-dot menu) and attach the file.
+        Personal data such as your email, frame number and location is removed automatically.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Relevant lines from the Home Assistant log, with debug logging enabled if possible.
+      render: text
