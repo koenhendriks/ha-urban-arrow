@@ -1,0 +1,81 @@
+{
+  "entity": {
+    "button": {
+      "flash_lights": {
+        "default": "mdi:car-light-high"
+      }
+    },
+    "device_tracker": {
+      "location": {
+        "default": "mdi:bicycle-cargo"
+      }
+    },
+    "sensor": {
+      "assist_level": {
+        "default": "mdi:bicycle-electric",
+        "state": {
+          "off": "mdi:power-off"
+        }
+      },
+      "last_online": {
+        "default": "mdi:cloud-clock"
+      },
+      "odometer": {
+        "default": "mdi:counter"
+      },
+      "protection_level": {
+        "default": "mdi:shield-lock",
+        "state": {
+          "none": "mdi:shield-off-outline"
+        }
+      },
+      "range": {
+        "default": "mdi:map-marker-distance"
+      },
+      "subscription_end": {
+        "default": "mdi:calendar-end"
+      }
+    },
+    "switch": {
+      "auto_protection": {
+        "default": "mdi:shield-sync",
+        "state": {
+          "off": "mdi:shield-sync-outline"
+        }
+      },
+      "module_battery_management": {
+        "default": "mdi:battery-sync"
+      },
+      "notify_battery_full": {
+        "default": "mdi:bell",
+        "state": {
+          "off": "mdi:bell-off"
+        }
+      },
+      "notify_battery_low": {
+        "default": "mdi:bell",
+        "state": {
+          "off": "mdi:bell-off"
+        }
+      },
+      "notify_module_battery_low": {
+        "default": "mdi:bell",
+        "state": {
+          "off": "mdi:bell-off"
+        }
+      },
+      "notify_protection_activated": {
+        "default": "mdi:bell",
+        "state": {
+          "off": "mdi:bell-off"
+        }
+      },
+      "theft_protection": {
+        "default": "mdi:shield-lock",
+        "state": {
+          "off": "mdi:shield-lock-open"
+        }
+      }
+    }
+  }
+}
