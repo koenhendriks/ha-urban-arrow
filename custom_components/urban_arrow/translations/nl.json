@@ -1,0 +1,132 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Log in met het account dat je in de Urban Arrow-app gebruikt.",
+        "data": {
+          "username": "E-mailadres",
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "username": "Het e-mailadres van je Urban Arrow-account.",
+          "password": "Het wachtwoord van je Urban Arrow-account."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Opnieuw inloggen",
+        "description": "De sessie voor {username} is verlopen. Vul je wachtwoord in om opnieuw in te loggen.",
+        "data": {
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "password": "Het wachtwoord van je Urban Arrow-account."
+        }
+      },
+      "reconfigure": {
+        "description": "Werk de inloggegevens van je Urban Arrow-account bij.",
+        "data": {
+          "username": "E-mailadres",
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "username": "Het e-mailadres van je Urban Arrow-account.",
+          "password": "Het wachtwoord van je Urban Arrow-account."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken",
+      "invalid_auth": "Ongeldig e-mailadres of wachtwoord",
+      "captcha_required": "Het inloggen bij Urban Arrow vraagt nu om een captcha, die deze integratie niet kan oplossen. Probeer het later opnieuw.",
+      "mfa_required": "Accounts met tweestapsverificatie worden niet ondersteund.",
+      "unknown": "Onverwachte fout"
+    },
+    "abort": {
+      "already_configured": "Dit account is al geconfigureerd",
+      "reauth_successful": "Opnieuw inloggen is gelukt",
+      "reconfigure_successful": "Herconfiguratie is gelukt",
+      "wrong_account": "Je kunt deze configuratie alleen met hetzelfde account bijwerken."
+    }
+  },
+  "entity": {
+    "button": {
+      "flash_lights": {
+        "name": "Lampen laten knipperen"
+      }
+    },
+    "device_tracker": {
+      "location": {
+        "name": "Locatie"
+      }
+    },
+    "sensor": {
+      "assist_level": {
+        "name": "Ondersteuningsniveau",
+        "state": {
+          "off": "Uit",
+          "eco": "Eco",
+          "tour": "Tour",
+          "sport": "Sport",
+          "turbo": "Turbo"
+        }
+      },
+      "last_online": {
+        "name": "Laatst online"
+      },
+      "module_battery": {
+        "name": "Modulebatterij"
+      },
+      "odometer": {
+        "name": "Kilometerstand"
+      },
+      "protection_level": {
+        "name": "Beveiligingsniveau",
+        "state": {
+          "geofence": "Geofence",
+          "motion_sensor": "Bewegingssensor",
+          "none": "Geen"
+        }
+      },
+      "range": {
+        "name": "Actieradius"
+      },
+      "subscription_end": {
+        "name": "Einde abonnement"
+      }
+    },
+    "switch": {
+      "auto_protection": {
+        "name": "Automatische beveiliging"
+      },
+      "module_battery_management": {
+        "name": "Batterijbeheer module"
+      },
+      "notify_battery_full": {
+        "name": "Melding batterij vol"
+      },
+      "notify_battery_low": {
+        "name": "Melding batterij bijna leeg"
+      },
+      "notify_module_battery_low": {
+        "name": "Melding modulebatterij bijna leeg"
+      },
+      "notify_protection_activated": {
+        "name": "Melding beveiliging geactiveerd"
+      },
+      "theft_protection": {
+        "name": "Diefstalbeveiliging"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "Inloggen bij de Urban Arrow-cloud is mislukt"
+    },
+    "update_failed": {
+      "message": "Fout bij communicatie met de Urban Arrow-cloud: {error}"
+    },
+    "action_failed": {
+      "message": "De Urban Arrow-cloud heeft het verzoek geweigerd: {error}"
+    }
+  }
+}

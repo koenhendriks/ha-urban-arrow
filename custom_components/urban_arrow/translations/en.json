@@ -1,0 +1,132 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "description": "Sign in with the account you use in the Urban Arrow app.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        },
+        "data_description": {
+          "username": "The email address of your Urban Arrow account.",
+          "password": "The password of your Urban Arrow account."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in again",
+        "description": "The session for {username} has expired. Enter your password to sign in again.",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "The password of your Urban Arrow account."
+        }
+      },
+      "reconfigure": {
+        "description": "Update the credentials of your Urban Arrow account.",
+        "data": {
+          "username": "Email",
+          "password": "Password"
+        },
+        "data_description": {
+          "username": "The email address of your Urban Arrow account.",
+          "password": "The password of your Urban Arrow account."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid email or password",
+      "captcha_required": "The Urban Arrow login now requires a captcha, which this integration cannot solve. Please try again later.",
+      "mfa_required": "Accounts with multi-factor authentication are not supported.",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "This account is already configured",
+      "reauth_successful": "Re-authentication was successful",
+      "reconfigure_successful": "Re-configuration was successful",
+      "wrong_account": "You can only reconfigure this entry with the same account."
+    }
+  },
+  "entity": {
+    "button": {
+      "flash_lights": {
+        "name": "Flash lights"
+      }
+    },
+    "device_tracker": {
+      "location": {
+        "name": "Location"
+      }
+    },
+    "sensor": {
+      "assist_level": {
+        "name": "Assist level",
+        "state": {
+          "off": "Off",
+          "eco": "Eco",
+          "tour": "Tour",
+          "sport": "Sport",
+          "turbo": "Turbo"
+        }
+      },
+      "last_online": {
+        "name": "Last online"
+      },
+      "module_battery": {
+        "name": "Module battery"
+      },
+      "odometer": {
+        "name": "Odometer"
+      },
+      "protection_level": {
+        "name": "Protection level",
+        "state": {
+          "geofence": "Geofence",
+          "motion_sensor": "Motion sensor",
+          "none": "None"
+        }
+      },
+      "range": {
+        "name": "Range"
+      },
+      "subscription_end": {
+        "name": "Subscription end"
+      }
+    },
+    "switch": {
+      "auto_protection": {
+        "name": "Auto protection"
+      },
+      "module_battery_management": {
+        "name": "Module battery management"
+      },
+      "notify_battery_full": {
+        "name": "Battery full notification"
+      },
+      "notify_battery_low": {
+        "name": "Battery low notification"
+      },
+      "notify_module_battery_low": {
+        "name": "Module battery low notification"
+      },
+      "notify_protection_activated": {
+        "name": "Protection activated notification"
+      },
+      "theft_protection": {
+        "name": "Theft protection"
+      }
+    }
+  },
+  "exceptions": {
+    "auth_failed": {
+      "message": "Authentication with the Urban Arrow cloud failed"
+    },
+    "update_failed": {
+      "message": "Error communicating with the Urban Arrow cloud: {error}"
+    },
+    "action_failed": {
+      "message": "The Urban Arrow cloud rejected the request: {error}"
+    }
+  }
+}
