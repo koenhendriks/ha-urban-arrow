@@ -1,0 +1,14 @@
+{
+  "domain": "urban_arrow",
+  "name": "Urban Arrow",
+  "categories": ["vehicles_transport.bikes_scooters", "presence_location.trackers"],
+  "codeowners": ["@koenhendriks"],
+  "config_flow": true,
+  "documentation": "https://github.com/koenhendriks/ha-urban-arrow",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/koenhendriks/ha-urban-arrow/issues",
+  "loggers": ["urban_arrow_api"],
+  "requirements": ["urban-arrow-api==0.1.0"],
+  "version": "0.1.0"
+}
