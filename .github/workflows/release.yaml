@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifest version must match the release tag
+        run: |
+          version="$(jq -r .version custom_components/urban_arrow/manifest.json)"
+          test "${GITHUB_REF_NAME#v}" = "$version" || {
+            echo "Tag $GITHUB_REF_NAME does not match manifest version $version"; exit 1; }
