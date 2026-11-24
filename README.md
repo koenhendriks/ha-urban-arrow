@@ -11,8 +11,8 @@ Arrow or Pon.
 
 <table>
   <tr>
-    <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/sensors.png" width="360" alt="Sensors: assist level, battery, charging, odometer and range"></td>
-    <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/diagnostic.png" width="360" alt="Diagnostic: last online, location, module battery and protection level"></td>
+    <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/sensors.png" width="360" alt="Sensors: assist level, battery, charging, location, odometer and range"></td>
+    <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/diagnostic.png" width="360" alt="Diagnostic: last online, location updated, module battery and protection level"></td>
   </tr>
   <tr>
     <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/controls.png" width="360" alt="Controls: flash lights button and theft protection switch"></td>
@@ -67,7 +67,8 @@ Requirements:
 | Last online | Sensor (diagnostic) | Last time the bike module was online |
 | Subscription end | Sensor (diagnostic, disabled) | End of the data subscription |
 | Charging | Binary sensor | |
-| Location | Device tracker | GPS position of the bike |
+| Location | Device tracker | GPS position of the bike, also shown on the Map |
+| Location updated | Sensor (diagnostic) | When the bike last reported its GPS position |
 | Flash lights | Button | Find your bike |
 | Theft protection | Switch | Arm or disarm theft detection |
 | Auto protection | Switch (config) | Arm automatically after riding |
