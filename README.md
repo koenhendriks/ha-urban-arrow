@@ -115,8 +115,9 @@ uv run --no-project pytest
 uv run --no-project ruff check .
 ```
 
-Releases: bump `version` in `custom_components/urban_arrow/manifest.json`, then
-publish a GitHub release whose tag matches it.
+Releases: add the changes to `CHANGELOG.md`, bump `version` in
+`custom_components/urban_arrow/manifest.json`, then publish a GitHub release
+whose tag matches it, using the changelog section as release notes.
 
 ## License
 
