@@ -18,9 +18,6 @@ Arrow or Pon.
     <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/controls.png" width="360" alt="Controls: flash lights button and theft protection switch"></td>
     <td><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/configuration.png" width="360" alt="Configuration: auto protection and module battery management switches"></td>
   </tr>
-  <tr>
-    <td colspan="2"><img src="https://raw.githubusercontent.com/koenhendriks/ha-urban-arrow/main/docs/screenshots/config_flow.png" width="360" alt="Setup: sign in with your Urban Arrow email and password"></td>
-  </tr>
 </table>
 
 <!-- ha-marketplace:exclude-start -->
