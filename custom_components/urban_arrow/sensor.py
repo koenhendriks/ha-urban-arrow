@@ -106,6 +106,17 @@ SENSORS: tuple[UrbanArrowSensorEntityDescription, ...] = (
         value_fn=lambda data: data.bike.module.last_online if data.bike.module else None,
     ),
     UrbanArrowSensorEntityDescription(
+        key="location_updated",
+        translation_key="location_updated",
+        device_class=SensorDeviceClass.TIMESTAMP,
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda data: (
+            data.telemetry.location.last_updated
+            if data.telemetry and data.telemetry.location
+            else None
+        ),
+    ),
+    UrbanArrowSensorEntityDescription(
         key="subscription_end",
         translation_key="subscription_end",
         device_class=SensorDeviceClass.TIMESTAMP,

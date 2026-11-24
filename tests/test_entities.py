@@ -8,15 +8,16 @@ from homeassistant.const import ATTR_ENTITY_ID, SERVICE_TURN_OFF, SERVICE_TURN_O
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import HomeAssistantError
 from homeassistant.helpers import device_registry as dr
+from homeassistant.helpers import entity_registry as er
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 from pytest_homeassistant_custom_component.components.diagnostics import (
     get_diagnostics_for_config_entry,
 )
-from urban_arrow_api import BikeSetting, UrbanArrowApiError
+from urban_arrow_api import BikeSetting, Telemetry, UrbanArrowApiError
 
 from custom_components.urban_arrow.const import DOMAIN
 
-from .conftest import BIKE_ID
+from .conftest import BIKE_ID, load_fixture
 
 PREFIX = "test_arrow"
 
@@ -54,6 +55,7 @@ async def test_device(
         (f"sensor.{PREFIX}_module_battery", "22"),
         (f"sensor.{PREFIX}_protection_level", "motion_sensor"),
         (f"sensor.{PREFIX}_last_online", "2026-11-24T08:05:21+00:00"),
+        (f"sensor.{PREFIX}_location_updated", "2026-11-23T12:12:57+00:00"),
         (f"binary_sensor.{PREFIX}_charging", "off"),
         (f"switch.{PREFIX}_theft_protection", "on"),
         (f"switch.{PREFIX}_auto_protection", "on"),
@@ -67,9 +69,25 @@ async def test_entity_states(hass: HomeAssistant, entity_id: str, state: str) ->
 
 
 @pytest.mark.usefixtures("setup_integration")
-async def test_tracker_location(hass: HomeAssistant) -> None:
-    attrs = hass.states.get(f"device_tracker.{PREFIX}_location").attributes
+async def test_tracker_location(hass: HomeAssistant, entity_registry: er.EntityRegistry) -> None:
+    entity_id = f"device_tracker.{PREFIX}_location"
+    attrs = hass.states.get(entity_id).attributes
     assert (attrs["latitude"], attrs["longitude"]) == (52.0, 5.0)
+    assert entity_registry.async_get(entity_id).entity_category is None
+
+
+async def test_tracker_without_gps_fix(
+    hass: HomeAssistant, mock_client: AsyncMock, mock_config_entry: MockConfigEntry
+) -> None:
+    telemetry = load_fixture("telemetry.json")
+    telemetry["coordinate"]["value"] = {"latitude": 0, "longitude": 0}
+    mock_client.get_telemetry.return_value = Telemetry.parse(telemetry)
+    mock_config_entry.add_to_hass(hass)
+    assert await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+    state = hass.states.get(f"device_tracker.{PREFIX}_location")
+    assert state.state == "unknown"
+    assert "latitude" not in state.attributes
 
 
 @pytest.mark.usefixtures("setup_integration")

@@ -73,6 +73,9 @@
       "last_online": {
         "name": "Laatst online"
       },
+      "location_updated": {
+        "name": "Locatie bijgewerkt"
+      },
       "module_battery": {
         "name": "Modulebatterij"
       },

@@ -20,6 +20,9 @@
       "last_online": {
         "default": "mdi:cloud-clock"
       },
+      "location_updated": {
+        "default": "mdi:map-marker-radius"
+      },
       "odometer": {
         "default": "mdi:counter"
       },

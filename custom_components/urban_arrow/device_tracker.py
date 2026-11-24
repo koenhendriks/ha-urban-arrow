@@ -27,13 +27,20 @@ async def async_setup_entry(
 
 class UrbanArrowTracker(UrbanArrowEntity, TrackerEntity):
     _attr_source_type = SourceType.GPS
+    # Trackers default to diagnostic, which hides them from generated dashboards;
+    # for a bike the position is primary information.
+    _attr_entity_category = None
 
     @property
     def _location(self) -> Location | None:
         telemetry = self.bike_data.telemetry
         if telemetry is None or telemetry.location is None:
             return None
-        return telemetry.location.value
+        location = telemetry.location.value
+        # The module reports 0,0 when it has no GPS fix.
+        if location is None or (location.latitude == 0 and location.longitude == 0):
+            return None
+        return location
 
     @property
     def latitude(self) -> float | None:

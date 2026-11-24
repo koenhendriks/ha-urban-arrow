@@ -73,6 +73,9 @@
       "last_online": {
         "name": "Last online"
       },
+      "location_updated": {
+        "name": "Location updated"
+      },
       "module_battery": {
         "name": "Module battery"
       },
